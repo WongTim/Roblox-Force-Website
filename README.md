@@ -36,3 +36,24 @@ Clicking on an outfit allows you to see the contents of it. Additionally you wil
 Clicking on "Equip" will replace the character's portrait in the Members Page with this outfit
 <img width="1080" height="720" alt="set_vintage_flame" src="https://github.com/user-attachments/assets/5c88aed5-0797-46c7-80ca-62dae86121cd" />
 As you can see here, timwong's default portrait has now been replaced by his "Vintage Flame" portrait
+
+# Navigation Bar
+You would be pleased to know that the web application's server keeps track of the outfits you've unlocked. When you return back to the homepage after unlocking an outfit, there will now be the options of "Save" and "Awards" displayed in the navigation bar. The former option directs you to page where your progress is calculated and stored while the latter displays badges depending on how much you have completed.
+<img width="1080" height="720" alt="save_awards" src="https://github.com/user-attachments/assets/8073b408-55bc-4cab-99d9-dda63892eb7d" />
+
+## Saves Page
+This page displays your completion profile in this session such as your progress, the member portraits which reflect their current equipped outfit as well as action buttons. Should you attain a 100% completion, your profile will attain a shiny new look.
+<img width="1080" height="720" alt="currentprogress" src="https://github.com/user-attachments/assets/db4d18f7-361f-4a0e-b8e6-98f2f211dd9f" />
+
+## Save
+Clicking on "Save" directs you to a "Save Selection" page where you have 5 initially empty slots to save your progress to, thus allowing you to store up to 6 separate gameplay profiles in one session. Selecting an existing save would simply overwrite the progress. 
+<img width="1080" height="720" alt="saveslots" src="https://github.com/user-attachments/assets/33a2f345-f94f-42ef-870f-2ecea772b638" />
+
+## Load
+Similar to Save, clicking on "Load" brings you to the same page with the 5 slots, only that you will be choosing a slot to load its progress into your main profile. Note that you will be unable to load from empty slots.
+
+## Export
+This option allows you to permanently keep your progress. It downloads your current profile in the form of a .json file.
+<img width="409" height="81" alt="exportjson" src="https://github.com/user-attachments/assets/c1d54326-0943-4cf8-9666-23995364d2fe" />
+
+
