@@ -32,9 +32,7 @@ Some of them are unavailable by default and you will need to punch in a code to 
 
 ## Changing portraits of character with their outfit
 Clicking on an outfit allows you to see the contents of it. Additionally you will notice there is an equip button at the bottom of the page
-
-
-<img width="1918" height="921" alt="equip_button" src="https://github.com/user-attachments/assets/a58cbb87-9c10-4a4d-b641-902742329fd9" />
-
-
+<img width="1080" height="720" alt="equip_button" src="https://github.com/user-attachments/assets/a58cbb87-9c10-4a4d-b641-902742329fd9" />
 Clicking on "Equip" will replace the character's portrait in the Members Page with this outfit
+<img width="1080" height="720" alt="set_vintage_flame" src="https://github.com/user-attachments/assets/5c88aed5-0797-46c7-80ca-62dae86121cd" />
+As you can see here, timwong's default portrait has now been replaced by his "Vintage Flame" portrait
