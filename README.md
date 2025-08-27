@@ -23,7 +23,7 @@ Clicking on their portraits will bring you to their individual pages. The charac
 
 
 ## Character outfits
-Upon arriving at the Other Costumes section for the members, you are shown three alternate outfits from their inventory. Clicking on them allows you to see the contents of said costume. Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait.
+Upon scrolling down and arriving at the Other Costumes section, you are shown three alternate outfits from their inventory. Clicking on them allows you to see the contents of said costume. Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait.
 <img width="1080" height="720" alt="other_costumes" src="https://github.com/user-attachments/assets/72bdec47-5967-4665-b831-0d79c64911ba" />
 
 
