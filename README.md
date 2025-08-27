@@ -3,7 +3,10 @@ A fan page written in Python Flask and HTML illustrating a fictional group, Robl
 
 # Home Page
 You will be treated to the main page of the website introducing the group, our activities and some fun moments in-game. There will also be social media links such as Instagram so that you will be able to check out the social media page of Roblox Force!
-<img width="1918" height="919" alt="rforce_homepage" src="https://github.com/user-attachments/assets/0a3c969d-8e6b-42c2-8a25-f8419731fa94" />
+
+<img width="1080" height="720" alt="rforce_homepage" src="https://github.com/user-attachments/assets/0a3c969d-8e6b-42c2-8a25-f8419731fa94" />
+
+This page mainly introduces you to the Roblox Force group, their activities and their identity. CLicking on these dropdown tabs will expand on the info
 
 There is a checkbox here where you can raise feedback for this website.
 
