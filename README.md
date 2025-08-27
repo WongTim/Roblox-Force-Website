@@ -2,7 +2,7 @@
 A fan page written in Python Flask and HTML illustrating a fictional group, Roblox Force. The website comes with multiple interactive activities to engage the user and can even track their progress
 
 # Home Page
-You will be treated to the main page of the website introducing the group, our activities and some fun moments in-game. There will also be social media links such as Instagram so that you will be able to check out the social media page of Roblox Force! !(rforce_homepage)[rforce_hompage.png]
+You will be treated to the main page of the website introducing the group, our activities and some fun moments in-game. There will also be social media links such as Instagram so that you will be able to check out the social media page of Roblox Force! ![rforce_homepage](rforce_hompage.png)
 
 There is a checkbox here where you can raise feedback for this website.
 
