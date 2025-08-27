@@ -55,6 +55,9 @@ Similar to Save, clicking on "Load" brings you to the same page with the 5 slots
 This option allows you to permanently keep your progress. It downloads your current profile in the form of a .json file.
 <img width="409" height="81" alt="exportjson" src="https://github.com/user-attachments/assets/c1d54326-0943-4cf8-9666-23995364d2fe" />
 
+## CLear
+This option resets your main progress to 0%. However, this only affects your profile in the Saves page. The 5 slots are unaffected and will continue storing previously saved progress.
+
 # Badges
 Your hard earned progress can also be displayed in the form of badges. For each member whose outfits have been unlocked, you will attain their badge. You will also be awarded a Completion Badge should you reach 100% completion.
 <img width="1080" height="720" alt="badges" src="https://github.com/user-attachments/assets/130d591a-dcd2-4a31-80cd-782512caf9fc" />
