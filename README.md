@@ -28,4 +28,13 @@ Upon arriving at the Other Costumes section for the members, you are shown three
 
 <img width="1918" height="921" alt="other_costumes" src="https://github.com/user-attachments/assets/72bdec47-5967-4665-b831-0d79c64911ba" />
 
-Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait
+Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait.
+
+## Changing portraits of character with their outfit
+Clicking on an outfit allows you to see the contents of it. Additionally you will notice there is an equip button at the bottom of the page
+
+
+<img width="1918" height="921" alt="equip_button" src="https://github.com/user-attachments/assets/a58cbb87-9c10-4a4d-b641-902742329fd9" />
+
+
+Clicking on "Equip" will replace the character's portrait in the Members Page with this outfit
