@@ -17,7 +17,11 @@ You can also provide feedback for this website under the Suggestions and Feedbac
 # Members
 In this page, you will be able to see the 4 members of Roblox Force. They have customisable portraits representing them. 
 
-<img width="1080" height="720" alt="members" src="https://github.com/user-attachments/assets/99a62cbc-affa-466d-9491-93966f4192a8" />
+<img width="1080" height="720" alt="members" src="https://github.com/user-attachments/assets/73a13d9d-4589-48ec-85bd-ab820657d4f8" />
+
+Clicking on their portraits will bring you to their individual pages.
+<img width="1080" height="720" alt="timwong_page" src="https://github.com/user-attachments/assets/d28b65de-9585-4fa4-9a34-b20d0474a3c8" />
+The character's page has bio and some of their interests, as well as their other costumes that they wear. 
 
 
-Clicking on their portraits will bring you to their bio and some of their interests, as well as their wardrobe. Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait
+Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait
