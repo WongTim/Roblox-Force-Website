@@ -17,13 +17,14 @@ In this page, you will be able to see the 4 members of Roblox Force. They have c
 
 <img width="1080" height="720" alt="members" src="https://github.com/user-attachments/assets/73a13d9d-4589-48ec-85bd-ab820657d4f8" />
 
-Clicking on their portraits will bring you to their individual pages. The character's page has bio and their interests, as well as their other costumes that they wear. 
+# Character Bio Page
+Clicking on their portraits will bring you to their individual pages. The character's page has bio and their interests, as well as their other costumes that they wear. The default white hover colour of the navigation bar will also change to the main colour of said member. For instance, timwong's page turns the hover colour a metallic gold.
 <img width="1080" height="720" alt="timwong_page" src="https://github.com/user-attachments/assets/d28b65de-9585-4fa4-9a34-b20d0474a3c8" />
 
 
 ## Character outfits
 Upon arriving at the Other Costumes section for the members, you are shown three alternate outfits from their inventory. Clicking on them allows you to see the contents of said costume. Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait.
-<img width="1918" height="921" alt="other_costumes" src="https://github.com/user-attachments/assets/72bdec47-5967-4665-b831-0d79c64911ba" />
+<img width="1080" height="720" alt="other_costumes" src="https://github.com/user-attachments/assets/72bdec47-5967-4665-b831-0d79c64911ba" />
 
 
 
