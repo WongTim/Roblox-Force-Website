@@ -8,7 +8,11 @@ You will be treated to the main page of the website introducing the group, our a
 
 This page mainly introduces you to the Roblox Force group, their activities and their identity. CLicking on these dropdown tabs will expand on the info
 
-There is a checkbox here where you can raise feedback for this website.
+
+
+<img width="1080" height="720" alt="suggestions" src="https://github.com/user-attachments/assets/ed06cbd0-e1c8-4e20-a546-7c1c350e64dc" />
+
+You can also provide feedback for this website under the Suggestions and Feedback tab
 
 # Members
 In this page, you will be able to see the 4 members of Roblox Force. They have customisable portraits representing them. Clicking on their portraits will bring you to their bio and some of their interests, as well as their wardrobe. Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait
