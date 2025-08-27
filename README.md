@@ -15,4 +15,9 @@ This page mainly introduces you to the Roblox Force group, their activities and 
 You can also provide feedback for this website under the Suggestions and Feedback tab
 
 # Members
-In this page, you will be able to see the 4 members of Roblox Force. They have customisable portraits representing them. Clicking on their portraits will bring you to their bio and some of their interests, as well as their wardrobe. Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait
+In this page, you will be able to see the 4 members of Roblox Force. They have customisable portraits representing them. 
+
+<img width="1080" height="720" alt="members" src="https://github.com/user-attachments/assets/99a62cbc-affa-466d-9491-93966f4192a8" />
+
+
+Clicking on their portraits will bring you to their bio and some of their interests, as well as their wardrobe. Some of them are unavailable by default and you will need to punch in a code to unlock them. Once you have done so, you can even set those outfits as the characters' portrait
