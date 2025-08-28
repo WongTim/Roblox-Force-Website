@@ -811,7 +811,7 @@ def unlock_using():
 
 
 #===============================
-#   10. ROBLOX FORCE AVATAR
+#   ROBLOX FORCE AVATAR
 #===============================
 
 @app.route('/secret_character',methods=["POST"])
@@ -840,56 +840,6 @@ def rforce_avatar():
 
 
 
-
-
-#================
-#   11. GAMES     
-#================
-
-
-
-# @app.route('/costume_game',methods=["GET"])
-# def costume_game():
-#     '''
-#     Shows a list of all the unlocked costumes, cartoonish versions
-#     '''
-#     global flags
-    
-#     costumes = []
-#     for key in flags.get_data().keys():
-#         # If the flag variable is a costume
-#         if "_alt" in key:
-
-#             # Setup the name and outfit numbers from each flag
-#             name = reverse_truncate[key[0:-5]]
-#             number = int(key[-1])
-
-#             # If outfit is locked, the locked image will be displayed
-#             if flags.get_data()[key] == False:
-#                 outfit = get_character_alt(name,number)
-#             else:
-#                 # The cartoon version of the outfit is displayed if unlocked
-#                 outfit = get_cartoon_costume(name,number)[0]
-#             costumes.append(outfit)
-    
-#     # Corresponding assignments
-#     tim1 = costumes[0]
-#     tim2 = costumes[1]
-#     ellis2 = costumes[2]
-#     ellis3 = costumes[3]
-#     bala2 = costumes[4]
-#     bala3 = costumes[5]
-#     using2 = costumes[6]
-#     using3 = costumes[7]
-
-#     return render_template("costume_game.html",t1=tim1,t2=tim2,e2=ellis2,e3=ellis3,\
-#                            b2=bala2,b3=bala3,u2=using2,u3=using3)
-
-
-
-
-
-
 @app.route('/badges',methods=["GET"])
 def badges():
     ''' Retrieves the corresponding badges and displays them on badges.html'''
@@ -905,7 +855,7 @@ def badges():
 
 
 #================
-#   12. SAVES
+#   SAVES
 #================
 
 # When the user clicks on saves they will be directed to load_save_screen
@@ -925,7 +875,7 @@ class SaveSlot(Flags):
             self.using = get_cartoon_costume('using456',self.data['u_set'])[0]
             return [self.tim,self.ellis,self.bala,self.using]
 
-
+# Extra saves for testing
 test_save_101 = {
         "timwong_alt2" : True,
         "timwong_alt3" : True,
@@ -1125,91 +1075,9 @@ def update_flags():
     return render_template("current_save.html",tim=tim,ellis=ellis,bala=bala,using=using,progress=float(progress),award=award)
 
 
-
-# @app.route('/quiz_game',methods=["GET"])
-# def quiz_game():
-#     ''' Brings the user to the quiz game page'''
-#     return render_template('quiz_game.html')
-
-
-# @app.route('/quiz_result',methods=["POST"])
-# def quiz_result():
-#     ''' Calculates the score of the quiz results and gives user a badge if full score'''
-#     global flags
-#     score = 0   # Initialise a score for the correct answers
-#     Q1 = request.form["Q1"]
-#     Q2 = request.form["Q2"]
-#     Q3 = request.form["Q3"]
-#     Q4 = request.form["Q4"]
-#     Q5 = request.form["Q5"]
-#     if Q1 == "220320":
-#         score += 1
-#     if Q2 == "bala":
-#         score += 1
-#     if Q3 == "event2":
-#         score += 1
-#     if Q4 == "061220":
-#         score += 1
-#     if Q5 == "game4":
-#         score += 1
-#     if score == 5:
-#         flags.get_data()['quiz_badge'] = True
-#         msg = "You scored full marks! Well done!"
-#         badge = 'Roblox Force Webpage\static\games\rforce_expert.jpg'
-#         return render_template('badge.html',msg=msg,badge=badge)
-#     msg = f"You scored {score} out of 5. Try again to get full marks!"
-#     return render_template("quiz_game.html",msg=msg)
-
-
-
-
-
-# UPLOAD_FOLDER = 'C:\\Users\\wongc\\OneDrive\\Documents\\Python Project Collection\\Roblox Force Webpage (Portfolio)\\static\\custom_badges'
-# ALLOWED_EXTENSIONS = ["JPG","JPEG","PNG"]
-# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-
-# def allowed_file(filename):
-#     return '.' in filename and \
-#            filename.rsplit('.', 1)[1].upper() in ALLOWED_EXTENSIONS
-
-
-
-
-
-# @app.route('/upload_badge_game',methods=["GET"])
-# def upload_badge_game():
-#     '''Brings the user to the upload badge page'''
-#     return render_template('upload_badge_game.html')
-
-
-# @app.route('/upload_badge', methods=['POST'])
-# def upload_badge():
-#     global flags
-#     badge = '/static/games/star_badge.jpg'
-#     task = "Thanks for uploading your own badge! Here's one for you"
-#     if request.method == 'POST':
-#         # check if the post request has the file part
-#         if 'file' not in request.files:
-#             msg="File not deteced"
-#             return render_template("upload_badge_game.html",msg=msg)
-#         file = request.files['file']
-#         if file.filename == '':
-#             msg="File has no name"
-#             return render_template("upload_badge_game.html",msg=msg)
-#         if file and allowed_file(file.filename):
-#             filename = secure_filename(file.filename)
-#             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-#             flags.get_data()['uploader'] = True
-#             msg2 = "Thank you for submitting your custom badge."
-#             return render_template("upload_badge_game.html",msg2=msg2)
-
-
-
-
-
-'''======================= TUTORIALS =========================='''
-
+#################
+#   TUTORIALS   #
+#################
 
 @app.route('/tutorial/jetpack', methods=["GET"])
 def jetpack():
@@ -1222,3 +1090,4 @@ def bombastic():
 
 
 app.run(debug=True, port=5017)
+
