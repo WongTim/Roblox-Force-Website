@@ -1,0 +1,5 @@
+Follow the exact order of the colours
+What are the first letters of the colours?
+Check for empty spaces in your answer
+Your answer should only have 4 characters
+Your answer should not have any symbols or numbers
