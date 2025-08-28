@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+
+body {
+  background-color: black;
+  color: white;
+	font-family: Orbitron;
+  line-height: 200%;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Ensures it's always on top of other elements */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  font-family: Orbitron;
+  text-align: center;
+  padding: 30px 25px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+li a:hover {
+  background-color: #153D8A;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+
+.underline:hover {
+  text-decoration: underline;
+}
+
+.gold {
+	color: #D4AF37;
+}
+
+.blue {
+  color: #153D8A;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: #f3c135;
+}
+
+.green {
+  color: #66bb6a;
+}
+
+.pink {
+  color: #F1BEEA;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+a:hover {
+	color: white;
+	transition: all 0.5s ease;
+}
+
+
+.container {
+  padding:10%;
+  padding-bottom: 0;
+}
+
+.container-center {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+
+p {
+  font-size: 20px;
+}
+
+.right {
+	float: right;
+  display:flex;
+  margin-right: 10%;
+}
+
+.break {margin-bottom:5%;}
+
+.break2 {
+  margin-bottom:10%;
+}
+
+.section-divider {
+  background-color: #153D8A;
+  border: none;
+  width: 80%;
+  height: 5px;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 20px; /* smaller gap */
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  border: 3px solid #153D8A;
+  border-radius: 10px;
+  background-color: #2c2f33;
+  padding: 1%;
+  box-sizing: border-box;
+  object-fit: contain;
+  transition: all 0.7s ease;
+}
+
+.gallery img:hover {
+  background-color: white;
+}
+
+
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.game-card {
+  display: flex;
+  background-color: #2c2f33;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.game-card:hover {
+  transform: scale(1.02);
+}
+
+.game-card img {
+  width: 100px;
+  height: 100px;
+  padding-right: 5%;
+}
+
+.game-text {
+  font-size: 18px;
+  flex-direction: column;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding-bottom: 50px;
+}
+
+.card {
+  height: 250px;
+  background-color: #2c2f33;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  transition: transform 0.4s ease;
+  transform-origin: top center;
+  position: relative;
+  z-index: 1; /* baseline */
+}
+
+.card:hover {
+  transform: scaleY(1.15);
+  z-index: 10; /* bring it above nearby elements */
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scaleX(1.15); /* optional subtle zoom */
+}
+
+
+
+.card figcaption {
+  margin-top: 15px;
+  font-size: 1rem;
+  transition: transform 0.4s ease;  /* Apply here */
+  text-decoration: none;
+}
+
+.card:hover figcaption {
+  transform: translateY(20%);
+  text-decoration: none;
+}
+
+.container-center p {
+  margin-bottom: 200px;
+}
+
+/* Dark mode popup container */
+.dark-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    color: #eee;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    z-index: 999;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Input box styling */
+.dark-modal input {
+    margin-bottom: 20px;
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    background: #333;
+    color: #eee;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+/* Button styling */
+.dark-modal button {
+    padding: 8px 20px;
+    background: #444;
+    color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.dark-modal button:last-child {
+    background: #555;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="{{url_for('home')}}">Home</a></li>
+  <li><a href="{{url_for('members')}}">Members</a></li>
+  <li><a href="{{url_for('games')}}">Games</a></li>
+  <li><a href="{{url_for('memes')}}">Memes</a></li>
+  <li><a href="{{url_for('tutorials')}}">Tutorials</a></li>
+</ul>
+
+
+<div class="container">
+  <h1 class="blue"><a class="blue underline" href="https://www.roblox.com/users/42529139/profile" target="_blank">ellisl4d2character 🔗</a></h1>
+  <p class="break2">a long time Robloxian who forms a "tough-to-beat" criminal or hero partnership with the rest of the Roblox Force.
+  
+  <h1 class="blue" style="display:flex;">Character Kit</h1>
+  <img src="/static/members/ellisl4d2character/ellis.jpg" class="right">
+  <div class="gallery">
+    <img src="/static/members/ellisl4d2character/blue_hoodie.webp" title="Blue Fashion Hood">
+    <img src="/static/members/ellisl4d2character/ninja_mask.webp" title="Ninja Mask of Light">
+    <img src="/static/members/ellisl4d2character/angery_eyes.webp" title="Angery Eyes">
+    <img src="/static/members/ellisl4d2character/neoclassic_face.webp" title="Neoclassic male v2 - Face">
+    <img src="/static/members/ellisl4d2character/blue_jacket.webp" title="palm angels blue track hoodie">
+    <img src="/static/members/ellisl4d2character/Roblox Force - Blue.webp" title="Roblox Force - Blue">
+    <img src="/static/members/ellisl4d2character/sword_of_truth.webp" title="Russo's Sword of Truth">
+    <img src="/static/members/ellisl4d2character/classic_pants.webp" title="Classic Male v2 - Pants">
+  </div>
+</div>
+
+<p class="break"></p>
+
+<hr class="section-divider">
+<div class="container" style="padding-top: 1%;">
+  <h1 class="blue">Bio</h1>
+  <p><span class="blue">Date Joined:</span> 17 May 2013</p>
+  <p><span class="blue">Playstyle:</span> Tactical and Versatile</p>
+  <p><span class="blue">Favourite Colour:</span> Blue</p>
+
+  <p class="break2"></p>
+
+  <h1 class="blue break">Top 3 Favourite Games</h1>
+  <div class="game-grid">
+    <a href="https://www.roblox.com/games/13864661000/Break-In-2-Story" target="_blank">
+      <div class="game-card">
+        <img src="/static/games/Break_In.webp" alt="Break In 1/2">
+          <p class="game-text">Break In 1/2</p>
+      </div>
+    </a>
+
+    <a href="https://www.roblox.com/games/192800/Work-at-a-Pizza-Place" target="_blank">
+      <div class="game-card">
+        <img src="/static/games/pizza_place.webp" alt="Work at a Pizza Place">
+        <p class="game-text">Work at a Pizza Place</p>
+      </div>
+    </a>
+
+    <a href="https://www.roblox.com/games/91282350711571/Mad-City-Chapter-1-MALL-HEIST" target="_blank">
+      <div class="game-card">
+        <img src="/static/games/madcity_chapter1.webp" alt="Madcity">
+        <p class="game-text">Madcity</p>
+      </div>
+    </a>
+</div>
+
+
+<div class="break"></div></div>
+<hr class="section-divider">
+<div class="break"></div>
+
+<div class="container-center">
+  <h1 class="blue">Other Costumes</h1>
+
+  <div class="card-grid">
+
+    <a href="{{ url_for('ellis1') }}" class="card-link">
+      <figure class="card">
+        <img src="/static/members/ellisl4d2character/ellis_alt1.jpg" alt="Casual Blue">
+        <figcaption class="blue">Casual Blue</figcaption>
+      </figure>
+    </a>
+
+    {% if ellis_alt2 %}
+      <!-- Costume is unlocked -->
+      <a href="{{ url_for('ellis2') }}" class="card-link">
+        <figure class="card">
+          <img src="/static/members/ellisl4d2character/ellis_alt2.jpg" alt="Candy Man">
+          <figcaption class="pink">Candy Man</figcaption>
+        </figure>
+      </a>
+    {% else %}
+      <!-- Costume is locked -->
+      <a href="{{ url_for('unlock_ellis') }}" onclick="openUnlockModal('/unlock_ellis'); return false;">
+        <figure class="card">
+          <img src="/static/members/ellisl4d2character/ellis_alt2_locked.jpg" alt="Candy Man locked">
+        </figure>
+      </a>
+    {% endif %}
+
+    {% if ellis_alt3 %}
+      <!-- Costume is unlocked -->
+      <a href="{{ url_for('ellis3') }}" class="card-link">
+        <figure class="card">
+          <img src="/static/members/ellisl4d2character/ellis_alt3.jpg" alt="Gilded Vault">
+          <figcaption class="yellow">Gilded Vault</figcaption>
+        </figure>
+      </a>
+    {% else %}
+      <!-- Costume is locked -->
+      <a href="{{ url_for('unlock_ellis') }}" onclick="openUnlockModal('/unlock_ellis'); return false;">
+        <figure class="card">
+          <img src="/static/members/ellisl4d2character/ellis_alt3_locked.jpg" alt="Gold Viking locked">
+        </figure>
+      </a>
+    {% endif %}
+  </div>
+</div>
+{% if not ellis_alt2 or not ellis_alt3 %}
+  <p class="break" style="text-align:center">Oops, not all costumes are available for viewing. Click on the locked costumes to unlock them!</p>
+{% endif %}
+
+
+
+
+
+
+
+<!-- Shared Popup Modal -->
+
+<div id="passModal" class="dark-modal">
+    <h3 id="popupTitle" style="margin-top:0; color:#ffcc00;">🔒 Enter Passcode</h3>
+    <input type="text" id="passInput">
+    <br>
+    <button onclick="submitPass()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+    <p id="passMessage" style="color: red; display: none;"></p>
+</div>
+
+<!-- Unlocked Popup (hidden initially) -->
+<div id="unlockedModal" class="dark-modal" style="display:none;">
+    <h3 style="margin-top:0; color:#00ff00;">✅ Costume Unlocked!</h3>
+    <img id="unlockedImage" src="" alt="Unlocked Costume" style="max-width: 100%; border-radius: 8px;">
+    <p id="unlockedCaption"></p>
+    <button onclick="closeUnlockedModal()">Close</button>
+</div>
+
+<script>
+let currentUnlockUrl = "";
+
+function openUnlockModal(targetUrl) {
+    currentUnlockUrl = targetUrl;
+    document.getElementById("passMessage").style.display = "none";
+    document.getElementById("passInput").value = "";
+    document.getElementById("passModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("passModal").style.display = "none";
+}
+
+function submitPass() {
+    let code = document.getElementById("passInput").value;
+    fetch(currentUnlockUrl, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'costume_unlock=' + encodeURIComponent(code),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            closeModal();
+            showUnlockedModal(data.image_url, data.caption);
+        } else {
+            document.getElementById("passMessage").textContent = data.message;
+            document.getElementById("passMessage").style.display = "block";
+        }
+    });
+}
+
+function showUnlockedModal(imgUrl, caption) {
+    document.getElementById("unlockedImage").src = imgUrl;
+    document.getElementById("unlockedCaption").textContent = caption;
+    document.getElementById("unlockedModal").style.display = "block";
+}
+
+function closeUnlockedModal() {
+    document.getElementById("unlockedModal").style.display = "none";
+    location.reload();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</meta>
+
+
+
+
+
+
+

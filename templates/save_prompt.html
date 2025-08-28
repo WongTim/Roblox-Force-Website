@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+
+body {
+    background-color: black;
+    color: white;
+	font-family: Orbitron;
+    font-size: 20px;
+}
+
+
+
+
+
+button {
+  font-family: Orbitron;
+  background-color: #caccd6;
+  width: 200px;
+  height: 100px;
+  font-size: 20px;
+  border: none;
+}
+
+.red {
+	background-color: red;
+}
+
+
+
+button:hover {
+  background-color: white;
+  transition: all 1s ease;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
+	
+
+
+p {
+	text-align:center;
+}
+	
+	
+
+
+</style>
+</head>
+<body>
+
+
+<center><h2>Chosen Save file: {{save_number}}</h2><br><br>
+
+<div class="row">
+		<form action="{{url_for('save_action')}}" method="post">
+			<button type="submit" value="load" name="action">Load</button>
+			<button type="submit" value="save" name="action">Save</button>
+      <button type="submit" value="delete" name="action">Delete</button>
+		</form><br> 
+	</div><br>
+
+	<form action="{{url_for('save_selection')}}" method="get">
+		<button type="submit" class="red">Go back</button>
+	</form>
+
+</center>
+
+

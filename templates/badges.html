@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+ <html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+
+
+body {
+  background-color: black;
+  color: white;
+	font-family: Orbitron;
+  font-size: 20px;
+}
+
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  cursor: pointer;
+}
+
+li, .left {
+  float: left;
+}
+
+
+.right {
+	float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 40px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: black;
+  background-color: red;
+  transition: all 0.4s ease;
+}
+
+.container {
+  padding:10%;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.section-divider {
+  background-color: white;
+  border: none;
+  width: 80%;
+  height: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5%;
+  max-width: 50%;
+  padding-bottom: 50px;
+}
+
+img {
+  width: 150px;
+}
+
+
+</style>
+
+<ul>
+  <li><a href="{{url_for('home')}}">← Back</a></li>
+</ul>
+
+
+<div class="container">
+
+  <h2 style="color:lawngreen">Your Achievements</h2>
+  <p style="margin-bottom:10%;">Collect them all!</p>
+
+  <h2>Costumes</h2>
+  <div class="grid">
+    {% if t_badge == True %}
+      <img src="/static/badges/timwong_badge.jpg">
+    {% else %}
+      <img src="/static/badges/grey_circle.jpg">
+    {% endif %}
+
+    {% if e_badge == True %}
+      <img src="/static/badges/ellis_badge.jpg">
+    {% else %}
+      <img src="/static/badges/grey_circle.jpg">
+    {% endif %}
+
+    {% if b_badge == True %}
+      <img src="/static/badges/bala_badge.jpg">
+    {% else %}
+      <img src="/static/badges/grey_circle.jpg">
+    {% endif %}
+
+    {% if u_badge == True %}
+      <img src="/static/badges/using456_badge.jpg">
+    {% else %}
+      <img src="/static/badges/grey_circle.jpg">
+    {% endif %}
+  </div><br>
+
+
+  <h2>Completion Awards</h2>
+  <div class="grid">
+    {% if progress == 101 %}
+      <img src="/static/badges/rforce_expert_badge.jpg">
+    {% else %}
+      <img src="/static/badges/grey_circle.jpg">
+    {% endif %}
+
+    {% if progress >= 100 %}
+      <img src="/static/badges/100_Completion_badge.jpg">
+    {% else %}
+      <img src="/static/badges/grey_circle.jpg">
+    {% endif %}
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</meta>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+
+body {
+  background-color: black;
+  color: white;
+	font-family: Orbitron;
+  line-height: 200%;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Ensures it's always on top of other elements */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  font-family: Orbitron;
+  text-align: center;
+  padding: 30px 25px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+li a:hover {
+  background-color: #ff00fa;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+
+.underline:hover {
+  text-decoration: underline;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+a:hover {
+	color: white;
+	transition: all 0.5s ease;
+}
+
+
+.container {
+  padding:10%;
+  padding-bottom: 0;
+}
+
+.container-center {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+
+p {
+  font-size: 20px;
+}
+
+.pink {
+  color: #ff00fa;
+}
+
+.bombastic {
+  color: coral;
+}
+
+.aqua {
+  color: #359bc2;
+}
+
+.royal {
+  color:#a428b9;
+}
+
+.right {
+	float: right;
+  display:flex;
+  margin-right: 10%;
+}
+
+.break {margin-bottom:5%;}
+
+.break2 {
+  margin-bottom:10%;
+}
+
+.section-divider {
+  background-color: #ff00fa;
+  border: none;
+  width: 80%;
+  height: 5px;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 20px; /* smaller gap */
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  border: 3px solid #ff00fa;
+  border-radius: 10px;
+  background-color: #2c2f33;
+  padding: 1%;
+  box-sizing: border-box;
+  object-fit: contain;
+  transition: all 0.7s ease;
+}
+
+.gallery img:hover {
+  background-color: white;
+}
+
+
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.game-card {
+  display: flex;
+  background-color: #2c2f33;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.game-card:hover {
+  transform: scale(1.02);
+}
+
+.game-card img {
+  width: 100px;
+  height: 100px;
+  padding-right: 5%;
+}
+
+.game-text {
+  font-size: 18px;
+  flex-direction: column;
+}
+
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding-bottom: 50px;
+}
+
+.card {
+  height: 250px;
+  background-color: #2c2f33;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  transition: transform 0.4s ease;
+  transform-origin: top center;
+  position: relative;
+  z-index: 1; /* baseline */
+}
+
+.card:hover {
+  transform: scaleY(1.15);
+  z-index: 10; /* bring it above nearby elements */
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scaleX(1.15); /* optional subtle zoom */
+}
+
+
+
+.card figcaption {
+  margin-top: 15px;
+  font-size: 1rem;
+  transition: transform 0.4s ease;  /* Apply here */
+  text-decoration: none;
+}
+
+.card:hover figcaption {
+  transform: translateY(20%);
+  text-decoration: none;
+}
+
+.container-center p {
+  margin-bottom: 200px;
+}
+
+/* Dark mode popup container */
+.dark-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    color: #eee;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    z-index: 999;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Input box styling */
+.dark-modal input {
+    margin-bottom: 20px;
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    background: #333;
+    color: #eee;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+/* Button styling */
+.dark-modal button {
+    padding: 8px 20px;
+    background: #444;
+    color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.dark-modal button:last-child {
+    background: #555;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="{{url_for('home')}}">Home</a></li>
+  <li><a href="{{url_for('members')}}">Members</a></li>
+  <li><a href="{{url_for('games')}}">Games</a></li>
+  <li><a href="{{url_for('memes')}}">Memes</a></li>
+  <li><a href="{{url_for('tutorials')}}">Tutorials</a></li>
+</ul>
+
+
+<div class="container">
+  <h1><a class="underline pink" href="https://www.roblox.com/users/978499395/profile" target="_blank">bala3imcu 🔗</a></h1>
+  <p class="break2">The creator of Roblox Force and a passionate Robloxian, bala3imcu creates a variety of Roblox-related content suited for his fellow viewers to make their day better.</p>
+  
+  <h1 class="pink" style="display:flex;">Character Kit</h1>
+  <img src="/static/members/bala3imcu/bala3imcu.jpg" class="right">
+  <div class="gallery">
+    <img src="/static/members/bala3imcu/brown_charmer_hair.webp" title="Brown Charmer Hair">
+    <img src="/static/members/timwong/sunglasses.webp" title="Stylish Aviators">
+    <img src="/static/members/bala3imcu/chill.webp" title="Chill">
+    <img src="/static/members/bala3imcu/motorcycle_shirt.webp" title="Blue and Black Motorcycle Shirt">
+    <img src="/static/members/bala3imcu/Roblox Force - White.webp" title="Roblox Force - White">
+    <img src="/static/members/bala3imcu/bala_left_leg.webp" title="Squad Ghouls: Drop Dead Tedd - Left Leg">
+    <img src="/static/members/bala3imcu/bala_right_leg.webp" title="Squad Ghouls: Drop Dead Tedd - Right Leg">
+
+  </div>
+</div>
+
+<p class="break"></p>
+
+<hr class="section-divider">
+<div class="container" style="padding-top: 1%;">
+  <h1 class="pink">Bio</h1>
+  <p><span class="pink">Date Joined:</span> 23 February 2019</p>
+  <p><span class="pink">Playstyle:</span> Fleet-footed and Creative</p>
+  <p><span class="pink">Favourite Colour:</span> White</p>
+
+  <p class="break2"></p>
+
+  <h1 class="pink break">Top 3 Favourite Games</h1>
+  <div class="game-grid">
+    <a href="https://www.roblox.com/games/13864661000/Break-In-2-Story" target="_blank">
+      <div class="game-card">
+        <img src="/static/games/Break_In.webp" alt="Break In 1/2">
+          <p class="game-text">Break In 1/2</p>
+      </div>
+    </a>
+
+    <a href="https://www.roblox.com/games/189707/Natural-Disaster-Survival" target="_blank">
+      <div class="game-card">
+        <img src="/static/games/nds.webp" alt="Natural Disaster Survival">
+        <p class="game-text">Natural Disaster Survival</p>
+      </div>
+    </a>
+
+    <a href="https://www.roblox.com/games/1962086868/Tower-of-Hell" target="_blank">
+      <div class="game-card">
+        <img src="/static/games/tower_of_hell.webp" alt="Tower of Hell">
+        <p class="game-text">Tower of Hell</p>
+      </div>
+    </a>
+</div>
+
+
+<div class="break"></div></div>
+<hr class="section-divider">
+<div class="break"></div>
+
+<div class="container-center">
+  <h1 class="pink">Other Costumes</h1>
+
+  <div class="card-grid">
+
+    <a href="{{ url_for('bala1') }}" class="card-link">
+      <figure class="card">
+        <img src="/static/members/bala3imcu/bala_alt1.jpg" alt="Bombastic Sweater">
+        <figcaption class="bombastic" style="font-size: 15px;">Bombastic Sweater</figcaption>
+      </figure>
+    </a>
+
+    {% if bala_alt2 %}
+      <!-- Costume is unlocked -->
+      <a href="{{ url_for('bala2') }}" class="card-link">
+        <figure class="card">
+          <img src="/static/members/bala3imcu/bala_alt2.jpg" alt="Riptide Aqua">
+          <figcaption class="aqua">Riptide Aqua</figcaption>
+        </figure>
+      </a>
+    {% else %}
+      <!-- Costume is locked -->
+      <a href="{{ url_for('unlock_bala') }}" onclick="openUnlockModal('/unlock_bala'); return false;">
+        <figure class="card">
+          <img src="/static/members/bala3imcu/bala_alt2_locked.jpg" alt="Riptide Armour locked">
+        </figure>
+      </a>
+    {% endif %}
+
+    {% if bala_alt3 %}
+      <!-- Costume is unlocked -->
+      <a href="{{ url_for('bala3') }}" class="card-link">
+        <figure class="card">
+          <img src="/static/members/bala3imcu/bala_alt3.jpg" alt="Royal Madness">
+          <figcaption class="royal">Royal Madness</figcaption>
+        </figure>
+      </a>
+    {% else %}
+      <!-- Costume is locked -->
+      <a href="{{ url_for('unlock_bala') }}" onclick="openUnlockModal('/unlock_bala'); return false;">
+        <figure class="card">
+          <img src="/static/members/bala3imcu/bala_alt3_locked.jpg" alt="Royal Madness locked">
+        </figure>
+      </a>
+    {% endif %}
+  </div>
+</div>
+{% if not bala_alt2 or not bala_alt3 %}
+  <p class="break" style="text-align:center">Oops, not all costumes are available for viewing. Click on the locked costumes to unlock them!</p>
+{% endif %}
+
+
+
+
+
+
+
+<!-- Shared Popup Modal -->
+
+<div id="passModal" class="dark-modal">
+    <h3 id="popupTitle" style="margin-top:0; color:#ffcc00;">🔒 Enter Passcode</h3>
+    <input type="text" id="passInput">
+    <br>
+    <button onclick="submitPass()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+    <p id="passMessage" style="color: red; display: none;"></p>
+</div>
+
+<!-- Unlocked Popup (hidden initially) -->
+<div id="unlockedModal" class="dark-modal" style="display:none;">
+    <h3 style="margin-top:0; color:#00ff00;">✅ Costume Unlocked!</h3>
+    <img id="unlockedImage" src="" alt="Unlocked Costume" style="max-width: 100%; border-radius: 8px;">
+    <p id="unlockedCaption"></p>
+    <button onclick="closeUnlockedModal()">Close</button>
+</div>
+
+<script>
+let currentUnlockUrl = "";
+
+function openUnlockModal(targetUrl) {
+    currentUnlockUrl = targetUrl;
+    document.getElementById("passMessage").style.display = "none";
+    document.getElementById("passInput").value = "";
+    document.getElementById("passModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("passModal").style.display = "none";
+}
+
+function submitPass() {
+    let code = document.getElementById("passInput").value;
+    fetch(currentUnlockUrl, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'costume_unlock=' + encodeURIComponent(code),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            closeModal();
+            showUnlockedModal(data.image_url, data.caption);
+        } else {
+            document.getElementById("passMessage").textContent = data.message;
+            document.getElementById("passMessage").style.display = "block";
+        }
+    });
+}
+
+function showUnlockedModal(imgUrl, caption) {
+    document.getElementById("unlockedImage").src = imgUrl;
+    document.getElementById("unlockedCaption").textContent = caption;
+    document.getElementById("unlockedModal").style.display = "block";
+}
+
+function closeUnlockedModal() {
+    document.getElementById("unlockedModal").style.display = "none";
+    location.reload();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</meta>
+
+
+
+
+
+
+

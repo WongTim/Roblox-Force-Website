@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+
+body {
+    background-color: black;
+    color: white;
+	font-family: Orbitron;
+}
+
+
+a {text-decoration: none;}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Ensures it's always on top of other elements */
+}
+
+li {
+  float: left;
+}
+
+li.b {
+  float:right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 25px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+
+}
+
+li a:hover {
+  background-color: white;
+  color: black
+}
+
+
+#shadowBox {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Black w/opacity/see-through */
+}
+
+
+.rainbow_text_animated {
+    background: linear-gradient(to right, gold, blue, white, cyan);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 4s ease-in-out infinite;
+    background-size: 400% 100%;
+	margin-top: 50px;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  padding: 0 5px;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  padding: 5px;
+}
+
+
+
+.gold {
+	color: #D4AF37;
+}
+
+.blue {
+	color:blue;
+}
+
+.neon {
+	color:cyan;
+}
+
+.green {
+	color:lime;
+}
+
+.red {
+	color:red;
+}
+
+.silver {
+	color: silver;
+}
+
+.white {
+    color: white;
+}
+
+.pink {
+    color: pink;
+}
+
+.purple {
+	color:#F616D4;
+}
+
+.coral {color:coral;}
+
+.gold:hover {
+	background-color: #D4AF37;
+	color: black;
+	font-size: 25px;
+	padding: 30px 30px;
+	transition: all 0.7s ease;
+}
+
+.green:hover {
+	background-color: lime;
+	color:white;
+	padding: 30px 30px;
+	font-size: 25px;
+	transition: all 0.7s ease;
+}
+
+
+.red:hover {
+	background-color: red;
+	color:black;
+	padding: 30px 30px;
+	transition: all 0.7s ease;
+	font-size: 25px;
+}
+
+
+
+
+.blue:hover {
+	background-color: blue;
+	padding: 30px 30px;
+	transition: all 0.7s ease;
+	font-size: 25px;
+	color: white;
+}
+
+
+
+.silver:hover {
+	background-color: silver;
+	padding: 30px 30px;
+	transition: all 0.7s ease;
+	font-size: 25px;
+}
+
+
+.white:hover {
+	background-color: white;
+	padding: 30px 30px;
+	transition: all 0.7s ease;
+	font-size: 25px;
+	color: black;
+}
+
+.neon:hover {
+	background-color: cyan;
+	padding: 30px 30px;
+	transition: all 0.7s ease;
+	font-size: 25px;
+	color: black;
+}
+
+.pink:hover {
+	background-color: pink;
+	color: black;
+	padding: 30px 30px;
+	transition: all 0.7s ease;
+	font-size: 25px;
+}
+
+.purple:hover {
+	background-color:#F616D4;
+	color: black;
+	padding: 30px 30px;
+	transition: all 0.7s ease;
+	font-size: 25px;
+}
+
+.coral:hover {
+	background-color: coral;
+	padding: 30px 30px;
+	max-width: 300px;
+	transition: all 0.7s ease;
+	font-size: 20px;
+	color: cyan;
+}
+
+input[type=text] {
+  font-family: Orbitron;
+  width: 20%;
+  padding: 5px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+::placeholder {
+	font-size: 15px;
+}
+
+input[type=submit] {
+  width: 10%;
+  font-family: Orbitron;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+}
+
+
+input[type=submit]:hover {
+  background-color: white;
+  color: #4CAF50;
+}
+
+
+p {font-size:20px;}
+
+
+
+fieldset {
+	border-color: yellow;
+}
+
+legend {
+	margin: 0 auto;
+}
+
+
+.attention {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.image {
+	float:left;
+	width: 100px;
+}
+
+
+
+.warning {
+	float:right;
+	color:yellow;
+	margin-right: 20px;
+}
+
+
+.blank {margin-top: 700px;}
+
+
+</style>
+
+
+<body>
+
+<ul>
+  <li><a href="{{url_for('home')}}">Home</a></li>
+  <li><a href="{{url_for('members')}}">Members</a></li>
+  <li><a href="{{url_for('games')}}">Games</a></li>
+  <li><a href="{{url_for('memes')}}">Memes</a></li>
+  <li><a href="{{url_for('tutorials')}}">Tutorials</a></li>
+</ul>
+
+
+<br><br><br>
+<div id="shadowBox">
+    <center><h1 class="rainbow rainbow_text_animated">Character Select</h1>
+</div>
+{% if progress == 100 %}
+  <p style="text-align: center";>Go to the bottom of the page</p><br>
+{% endif %}
+</center>
+
+<center><div class="row">
+
+  <div class="column">
+  <a href="{{url_for('timwong')}}">
+    <img class={{colour1}} src={{tim}} style="width:70%"></a><br><br>
+	<center><figcaption class={{colour1}}>timwong</figcaption></center>
+  </div>
+  
+  
+  <div class="column">
+  <a href="{{url_for('ellis')}}">
+    <img class={{colour2}} src={{ellis}} style="width:70%"><br><br>
+	<center><figcaption class={{colour2}}>ellisl4d2character</figcaption></center></a>
+  </div>
+  
+  
+  <div class="column">
+  <a href="{{url_for('bala')}}">
+    <img class={{colour3}} src={{bala}} style="width:70%"><br><br>
+	<center><figcaption class={{colour3}}>bala3imcu</figcaption></a></center>
+  </div>
+	
+	
+  <div class="column">
+  <a href="{{url_for('using')}}">
+    <img class={{colour4}} src={{using}} style="width:70%"><br><br>
+	<center><figcaption class={{colour4}}>using456</figcaption></a></center>	
+  </div>
+  
+</div></center>
+<br><br><br><br>
+
+
+{% if unlocked %}
+  <a href="{{url_for('rforce_avatar')}}">
+    <center><img class="coral" src="/static/members/rforce_avatar/rforce_avatar_remastered.jpg" style="width:230px"></a></center><br>
+    <center><figcaption class="coral">Roblox Force Avatar</figcaption></center>
+  <br><br><br><br>
+
+
+  
+{% else %}
+
+  <div class="blank"></div>
+
+
+  <fieldset>
+    <legend>
+      <div class="attention">
+      <img src="/static/members/attention.jpg?" class="image">
+      <p class="warning">Attention!</p>
+    </div>
+    </legend>
+    
+    <h2>You have scrolled all the way to the bottom and found this secret section!</h2><br><br>
+    
+    <p>A character is hidden from the roster. Can you draw him out with a passcode?<br><br>
+
+    The colours representing each member are Gold, Blue, White and Neon. What would happen if you combine the first letter of each of these colours?</p><br><br>
+    <form action="{{url_for('secret_character')}}" method="post">
+    <p>Passcode: <input type="text" name="passcode" placeholder="Passcode" required>
+    <input type="submit">
+    </p>
+    </form>
+    
+    
+  </fieldset>
+
+{% endif %}
+
+</body>
+
+
+</meta>
+
+
+
+
+

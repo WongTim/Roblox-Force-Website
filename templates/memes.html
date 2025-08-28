@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+body {
+    background-color: black;
+    color: white;
+	font-family: Orbitron;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 25px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.4s ease;
+}
+
+
+
+
+li.b {
+	float:right;
+}	
+
+
+
+</style>
+</head>
+<body>
+
+
+<ul>
+  <li><a href="{{url_for('home')}}">Home</a></li>
+  <li><a href="{{url_for('members')}}">Members</a></li>
+  <li><a href="{{url_for('games')}}">Games</a></li>
+  <li><a href="{{url_for('memes')}}">Memes</a></li>
+  <li><a href="{{url_for('tutorials')}}">Tutorials</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+<br><br>
+<center><h2>Here are some of our best memes</h2></center><br><br>
+
+
+
+<img src="/static/memes/threeheaddragon.jpg" style="width:500px;height:400px">
+<img src="/static/memes/iamspeed.jpg" style="width:500px;height:400px">
+
+
+
+
+</meta>

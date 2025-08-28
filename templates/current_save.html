@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rainbow Gradient Button</title>
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+body {
+  background-color: black;
+  color: white;
+  font-family: Orbitron;
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  cursor: pointer;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 25px;
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: black;
+  background-color: red;
+  font-size: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+button {
+  font-family: Orbitron;
+  background-color: #caccd6;
+  width: 250px;
+  height: 150px;
+  font-size: 20px;
+  border: none;
+}
+
+button:hover {
+  background-color: #6cffae;
+  transition: all 1s ease;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px; /* Optional: adds space between items */
+}
+
+.top {
+  margin-top: 5%;
+}
+
+img {
+  width: 50px;
+}
+
+
+.slot-actions {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.slot-actions button {
+  font-family: Orbitron, sans-serif;
+  font-size: 15px;
+  width:150px;
+  height:50px;
+  border-radius: 25px; /* Makes pill shape */
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+/* Colors */
+.btn-primary {
+  background-color: #caccd6;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #4fd08d;
+}
+
+.btn-danger {
+  background-color: #caccd6;
+  color: black;
+}
+.btn-danger:hover {
+  background-color: #ff4d4d;
+}
+
+
+.rainbow {
+  background: linear-gradient(90deg, 
+    #ff6666, /* Slightly more saturated Red */
+    #ff9966, /* Slightly more saturated Orange */
+    #ffff66, /* Slightly more saturated Yellow */
+    #99ff66, /* Slightly more saturated Green */
+    #66ccff, /* Slightly more saturated Blue */
+    #6666ff, /* Slightly more saturated Indigo */
+    #cc66ff  /* Slightly more saturated Violet */
+  );
+  cursor: pointer;
+
+}
+
+.rainbow:hover {
+  background: none; /* Remove the gradient to ensure the solid color is applied */
+  background-color: #6cffae;
+  color: white;
+}
+
+
+
+.metallic-gold {
+  background: linear-gradient(90deg, 
+    #8B7500,  /* Dark Gold */
+    #D4AF37,  /* Gold */
+    #B8860B,  /* Dark Goldenrod */
+    #FFD700,  /* Bright Gold */
+    #B8860B,  /* Dark Goldenrod */
+    #D4AF37,  /* Gold */
+    #8B7500   /* Dark Gold */
+  );
+  cursor: pointer;
+  transition: all 1s ease;
+}
+
+.metallic-gold:hover {
+  background: #6cffae;
+  color: white;
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="{{url_for('home')}}">← Back</a></li>
+</ul>
+
+<center>
+
+<h2>This is your current progress</h2><br>
+<p>
+  {% if progress == 100.0 %}
+    Did you know you can attain a completion of 101%? One more challenge awaits in the Members page!
+  {% elif progress == 101.0 %}
+    You've unlocked everything. Well Done!
+  {% else %}
+    Keep playing to attain 100%!
+  {% endif %}
+
+</p>
+
+
+<div class="top"></div>
+<button class={{award}}>
+    Progress: {{progress}}%<br><br>
+    <div class="container">
+        <img src={{tim}}>
+        <img src={{ellis}}>
+        <img src={{bala}}>
+        <img src={{using}}>
+    </div>
+</button>
+
+
+  <div class="slot-actions">
+    <form action = "{{url_for('save_prompt')}}" method="post">
+      <button class="btn-primary" type="submit" name="action" value="load" title="Load progress from a save slot">Load</button>
+      <button class="btn-primary" type="submit" name="action" value="save" title="Save current progress to a save slot">Save</button>
+      <!-- <button class="btn-danger" title="Delete current progress">Delete</button> -->
+    </form><br>
+
+    <form action = "{{url_for('update_flags')}}" method="post" enctype="multipart/form-data">
+      <button class="btn-primary" type="submit" name="action" value="export" title="Export current progress as a JSON file">Export</button>
+      <!-- <button class="btn-primary" title="Import progress by uploading a JSON save file">Import</button> -->
+      <button class="btn-danger" type="submit" name="action" value="clear" title="Clear current progress">Clear</button>
+    </form>
+  </div>
+</form>
+
+</center>

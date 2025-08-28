@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+
+body {
+  background-color: black;
+  color: white;
+	font-family: Orbitron;
+  line-height: 200%;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Ensures it's always on top of other elements */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  font-family: Orbitron;
+  text-align: center;
+  padding: 30px 25px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+li a:hover {
+  background-color: #7DF9FF;
+  color: black;
+  transition: all 0.4s ease;
+}
+
+
+.underline:hover {
+  text-decoration: underline;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+a:hover {
+	color: white;
+	transition: all 0.5s ease;
+}
+
+
+.container {
+  padding:10%;
+  padding-bottom: 0;
+}
+
+.container-center {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+
+p {
+  font-size: 20px;
+}
+
+.avatar {
+  color:#bc6c1c;
+}
+
+.right {
+	float: right;
+  display:flex;
+  margin-left: 20%;
+  margin-bottom: 5%;
+}
+
+.break {margin-bottom:5%;}
+
+.break2 {
+  margin-bottom:10%;
+}
+
+.section-divider {
+  background-color: #bc6c1c;
+  border: none;
+  width: 80%;
+  height: 5px;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 20px; /* smaller gap */
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #2c2f33;
+  padding: 1%;
+  box-sizing: border-box;
+  object-fit: contain;
+  transition: all 0.7s ease;
+}
+
+
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.game-card {
+  display: flex;
+  background-color: #2c2f33;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.game-card:hover {
+  transform: scale(1.02);
+}
+
+.game-card img {
+  width: 100px;
+  height: 100px;
+  padding-right: 5%;
+}
+
+.game-text {
+  font-size: 18px;
+  flex-direction: column;
+}
+
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding-bottom: 50px;
+}
+
+.card {
+  height: 250px;
+  background-color: #2c2f33;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  transition: transform 0.4s ease;
+  transform-origin: top center;
+  position: relative;
+  z-index: 1; /* baseline */
+}
+
+.card:hover {
+  transform: scaleY(1.15);
+  z-index: 10; /* bring it above nearby elements */
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scaleX(1.15); /* optional subtle zoom */
+}
+
+
+
+.card figcaption {
+  margin-top: 15px;
+  font-size: 1rem;
+  transition: transform 0.4s ease;  /* Apply here */
+  text-decoration: none;
+}
+
+.card:hover figcaption {
+  transform: translateY(20%);
+  text-decoration: none;
+}
+
+.container-center p {
+  margin-bottom: 200px;
+}
+
+/* Dark mode popup container */
+.dark-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    color: #eee;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    z-index: 999;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Input box styling */
+.dark-modal input {
+    margin-bottom: 20px;
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    background: #333;
+    color: #eee;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+/* Button styling */
+.dark-modal button {
+    padding: 8px 20px;
+    background: #444;
+    color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.dark-modal button:last-child {
+    background: #555;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="{{url_for('home')}}">Home</a></li>
+  <li><a href="{{url_for('members')}}">Members</a></li>
+  <li><a href="{{url_for('games')}}">Games</a></li>
+  <li><a href="{{url_for('memes')}}">Memes</a></li>
+  <li><a href="{{url_for('tutorials')}}">Tutorials</a></li>
+</ul>
+
+
+<div class="container">
+  <h1><a class="underline avatar" href="https://www.instagram.com/p/CFR8O0FBSCF/?igsh=bTB6dW84ZDlsc3cy" target="_blank">Roblox Force Avatar 🔗</a></h1>
+  <p class="break2">He is known to the public as Roblox Force Avatar - an fusion of its 4 members, although there are whisperings that he may be their secret 5th member...</p>
+  
+  <h1 class="avatar" style="display:flex;">Character Kit</h1>
+  <img src="/static/members/rforce_avatar/rforce_avatar.jpg" class="right">
+  <div class="gallery">
+    <img src="/static/members/using456/roblox_neon_logo.webp" title="Roblox neon logo" alt="Roblox neon logo">
+    <img src="/static/members/rforce_avatar/rforce_avatar_hood.jpg" title="???" alt="unknown">
+    <img src="/static/members/ellisl4d2character/ninja_mask.webp" title="???" alt="unknown">
+    <img src="/static/members/ellisl4d2character/angery_eyes.webp" title="???" alt="unknown">
+  </div>
+</div>
+
+<p class="break"></p>
+
+<hr class="section-divider">
+<div class="container" style="padding-top: 1%;">
+  <h1 class="avatar">Bio</h1>
+  <p><span class="avatar">Date Joined:</span> 18 September 2020</p>
+  <p><span class="avatar">Playstyle:</span> ???</p>
+  <p><span class="avatar">Favourite Colour:</span> ???</p>
+
+  <p class="break2"></p>
+
+  <h1 class="avatar break">Top 3 Favourite Games</h1>
+  <div class="game-grid">
+    <a href="https://www.roblox.com/games/13864661000/Break-In-2-Story" target="_blank">
+      <div class="game-card">
+        <img src="/static/games/Break_In.webp" alt="Break In 1/2">
+          <p class="game-text">Break In 1/2</p>
+      </div>
+    </a>
+
+    <a href="https://www.roblox.com/games/14315258385/Realistic-Street-Soccer" target="_blank">
+      <div class="game-card">
+        <img src="/static/members/rforce_avatar/lucky_block_head.webp" alt="???">
+        <p class="game-text">???</p>
+      </div>
+    </a>
+
+    <a href="https://www.roblox.com/games/606849621/Jailbreak" target="_blank">
+      <div class="game-card">
+        <img src="/static/games/jailbreak.webp" alt="Jailbreak">
+        <p class="game-text">Jailbreak</p>
+      </div>
+    </a>
+</div>
+
+
+<div class="break"></div></div>
+<hr class="section-divider">
+<div class="break"></div>
+
+
+
+ 
+
+
+</body>
+</meta>
+
+
+
+
+
+
+

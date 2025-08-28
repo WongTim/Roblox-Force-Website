@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<style>
+
+body {
+  background-color: black;
+  color: white;
+	font-family: Orbitron;
+	line-height: 200%;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Ensures it's always on top of other elements */
+}
+
+li {
+  float: left;
+}
+
+
+li a {
+  display: block;
+  background-color: #d15136;
+  color: white;
+  font-family: Orbitron;
+  text-align: center;
+  padding: 20px 40px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+li a:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.4s ease;
+}
+
+p {
+  font-size:20px;
+}
+
+.yellow {
+  color:#f3c135;
+}
+
+
+.container {
+  padding: 10%;
+  padding-bottom: 0;
+}
+
+.break {
+  margin-bottom:5%;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 20px; /* smaller gap */
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.left {
+  float:left;
+}
+
+.right {
+	float: right;
+  margin-right: 10%;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #2c2f33;
+  padding: 1%;
+  box-sizing: border-box;
+  object-fit: contain;
+  transition: all 0.7s ease; /* Now background change will transition smoothly */
+}
+
+.gallery img:hover {
+  background-color: #f3c135;
+}
+
+.portrait {
+  width: 10%;
+  float: left; 
+}
+
+
+
+button {
+  color: black;
+  font-family: Orbitron;
+  border: none;
+  padding: 12px 30px;
+  margin-left: 5%;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.unequip {
+  background-color: #FFA500;
+  box-shadow: 0 0 10px #FFA500;
+}
+
+.equip {
+  background-color: #28ac5c;
+  box-shadow: 0 0 10px #28ac5c;
+}
+
+button:hover:not(:disabled) {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 15px white;
+}
+
+
+
+</style>
+<body>
+
+<ul>
+  <li><a href="{{url_for('ellis')}}"><- Back</a></li>
+</ul>
+
+
+<center>{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div id="flash-message" style="
+      background-color: #2e7d32;  /* green background */
+      color: #ffffff;
+      padding: 10px 20px;
+      margin-top: 5%;
+      border-radius: 8px;
+      font-family: Orbitron;
+      font-size: 16px;
+      box-shadow: 0 0 10px #66bb6a;
+      width: fit-content;
+    ">
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+</center>
+
+
+
+<div class="container">
+  <h1 class="yellow">Gilded Vault Costume</h1>
+  <p class="break">Fortune favours the bold! Do you have what it takes to unveil the secrets inside that vault?</p>
+  <img src="/static/members/ellisl4d2character/ellis_alt3.jpg" class="right">
+  
+  <p class="break"></p>
+
+  <h1 class="yellow">Gilded Vault Kit</h1>
+  <div class="gallery left">
+    <img src="/static/members/ellisl4d2character/egg_treasures.webp" title="Egg of Hidden Treasures">
+    <img src="/static/members/timwong/minion_goggles.webp" title="Minion Goggles">
+    <img src="/static/members/ellisl4d2character/blonde_spiked_hair.webp" title="Blonde Spiked Hair">
+    <img src="/static/members/ellisl4d2character/gold_adidas.webp" title="!GOLD GOLD GOLD GOLD GOLD GOLD GOLD GOLD GOLD GOLD">
+    <img src="/static/members/ellisl4d2character/black_jeans_with_white_shoes.webp" title="Black Jeans with White Shoes">
+  </div>
+  <div style="margin-bottom: 20%;"></div>
+</div>
+
+
+
+<div class="container">
+  <h1 class="yellow">Portrait</h1>
+  <img src="/static/members/ellisl4d2character/ellis_alt3_cartoon.jpg" class="portrait left">
+  
+
+  
+  <form action="{{ url_for('ellis3') }}" method="post">
+    {% if e_set == 3 %}
+      <p style="margin-left:15%">
+        Clicking on unequip will reset ellis' portrait to the default appearance!
+      </p>
+      <button name="action" value="unequip" class="unequip">Unequip</button>
+
+    {% else %}
+      <p style="margin-left:15%">
+        You can equip this outfit to be displayed as ellis' portrait in the Members page!
+      </p>
+      <button name="action" value="equip" class="equip">Equip</button>
+
+    {% endif %}  
+  </form>
+  
+  <div class="break"></div>
+</div>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</body></meta>

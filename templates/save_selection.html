@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rainbow Gradient Button</title>
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+body {
+  background-color: black;
+  color: white;
+  font-family: Orbitron;
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  cursor: pointer;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 25px;
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: black;
+  background-color: red;
+  font-size: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+button {
+  font-family: Orbitron;
+  background-color: #caccd6;
+  width: 250px;
+  height: 150px;
+  font-size: 20px;
+  border: none;
+}
+
+button:hover {
+  background-color: #6cffae;
+  transition: all 1s ease;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px; /* Optional: adds space between items */
+}
+
+img {
+  width: 50px;
+}
+
+.rainbow {
+  background: linear-gradient(90deg, 
+    #ff6666, /* Slightly more saturated Red */
+    #ff9966, /* Slightly more saturated Orange */
+    #ffff66, /* Slightly more saturated Yellow */
+    #99ff66, /* Slightly more saturated Green */
+    #66ccff, /* Slightly more saturated Blue */
+    #6666ff, /* Slightly more saturated Indigo */
+    #cc66ff  /* Slightly more saturated Violet */
+  );
+  cursor: pointer;
+
+}
+
+.rainbow:hover {
+  background: none; /* Remove the gradient to ensure the solid color is applied */
+  background-color: #6cffae;
+  color: white;
+}
+
+
+
+.metallic-gold {
+  background: linear-gradient(90deg, 
+    #8B7500,  /* Dark Gold */
+    #D4AF37,  /* Gold */
+    #B8860B,  /* Dark Goldenrod */
+    #FFD700,  /* Bright Gold */
+    #B8860B,  /* Dark Goldenrod */
+    #D4AF37,  /* Gold */
+    #8B7500   /* Dark Gold */
+  );
+  cursor: pointer;
+  transition: all 1s ease;
+}
+
+.metallic-gold:hover {
+  background: #6cffae;
+  color: white;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="{{url_for('load_save_screen')}}">← Back</a></li>
+</ul>
+
+<center>
+
+<h2>Choose a save slot</h2><br>
+  <form action="{{url_for('update_save')}}" method="post">
+    <div class="row">
+      {% if slot1 != None %}
+        <button type="submit" value="save1" name="save_button" class={{award1}}>
+          Save 1<br>
+          {{progress1}}%<br>
+          <div class="container">
+              <img src={{tim1}}>
+              <img src={{ellis1}}>
+              <img src={{bala1}}>
+              <img src={{using1}}>
+          </div>
+        </button>
+      {% elif slot1 == None and curr_action == "load" %}
+        <button type="submit" disabled>
+          Save 1<br><br>
+          EMPTY
+        </button>   
+      {% else %}
+        <button type="submit" name="save_button" value="save1">
+          Save 1<br><br>
+          EMPTY
+        </button>   
+      {% endif %}   
+
+
+      {% if slot2 != None %}
+        <button type="submit" value="save2" name="save_button" class={{award2}}>
+          Save 2<br>
+          {{progress2}}%<br>
+          <div class="container">
+              <img src={{tim2}}>
+              <img src={{ellis2}}>
+              <img src={{bala2}}>
+              <img src={{using2}}>
+          </div>
+        </button>
+      {% elif slot2 == None and curr_action == "load" %}
+        <button type="submit" disabled>
+          Save 2<br><br>
+          EMPTY
+        </button>   
+      {% else %}
+        <button type="submit" name="save_button" value="save2">
+          Save 2<br><br>
+          EMPTY
+        </button>       
+      {% endif %} 
+
+
+      {% if slot3 != None %}
+        <button type="submit" value="save3" name="save_button" class={{award3}}>
+          Save 3<br>
+          {{progress3}}%<br>
+          <div class="container">
+              <img src={{tim3}}>
+              <img src={{ellis3}}>
+              <img src={{bala3}}>
+              <img src={{using3}}>
+          </div>
+        </button>
+      {% elif slot3 == None and curr_action == "load" %}
+        <button type="submit" disabled>
+          Save 3<br><br>
+          EMPTY
+        </button>   
+      {% else %}
+        <button type="submit" name="save_button" value="save3">
+          Save 3<br><br>
+          EMPTY
+        </button>       
+      {% endif %} 
+    </div>
+
+    <br><br>
+
+
+    <div class="row">
+      {% if slot4 != None %}
+        <button type="submit" value="save4" name="save_button" class={{award4}}>
+          Save 4<br>
+          {{progress4}}%<br>
+          <div class="container">
+              <img src={{tim4}}>
+              <img src={{ellis4}}>
+              <img src={{bala4}}>
+              <img src={{using4}}>
+          </div>
+        </button>
+      {% elif slot4 == None and curr_action == "load" %}
+        <button type="submit" disabled>
+          Save 4<br><br>
+          EMPTY
+        </button>   
+      {% else %}
+        <button type="submit" name="save_button" value="save4">
+          Save 4<br><br>
+          EMPTY
+        </button>       
+      {% endif %} 
+
+      {% if slot5 != None %}
+        <button type="submit" value="save5" name="save_button" class={{award5}}>
+          Save 5<br>
+          {{progress5}}%<br>
+          <div class="container">
+              <img src={{tim5}}>
+              <img src={{ellis5}}>
+              <img src={{bala5}}>
+              <img src={{using5}}>
+          </div>
+        </button>
+      {% elif slot5 == None and curr_action == "load" %}
+        <button type="submit" disabled>
+          Save 5<br><br>
+          EMPTY
+        </button>   
+      {% else %}
+        <button type="submit" name="save_button" value="save5">
+          Save 5<br><br>
+          EMPTY
+        </button>       
+      {% endif %} 
+    </div>
+  </form>
+</center><br><br>
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+body {
+    background-color: black;
+    color: white;
+	font-family: Orbitron;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 25px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.4s ease;
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+
+<ul>
+  <li><a href="{{url_for('home')}}">Home</a></li>
+  <li><a href="{{url_for('members')}}">Members</a></li>
+  <li><a href="{{url_for('games')}}">Games</a></li>
+  <li><a href="{{url_for('memes')}}">Memes</a></li>
+  <li><a href="{{url_for('tutorials')}}">Tutorials</a></li>
+</ul>
+
+<br><br><br>
+<a href="{{url_for('jetpack')}}">
+<img src = '/static/tutorials/jetpack/jetpack_tutorial.jpg' style="width:400px;height:250px">
+</a>
+
+
+
+
+<a href="{{url_for('bombastic')}}">
+<img src = '/static/tutorials/bombastic/bombastic_tutorial.jpg' style="position: absolute;left:500px;width:400px;height:250px">
+</a>
+
+
+
+
+
+
+
+
+
+
+</meta>
+</html>
+
+
+

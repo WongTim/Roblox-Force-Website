@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+body {
+    background-color: black;
+    color: white;
+	font-family: Orbitron;
+	line-height: 200%;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Ensures it's always on top of other elements */
+}
+
+li {
+  float: left;
+}
+
+
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 25px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.4s ease;
+}
+  
+  
+.game {
+	width:400px;
+	height: 200px;
+}
+ 
+
+ 
+.game:hover {
+	height: 180px;
+	background-color: black;
+	transition: 0.4s ease;
+}
+
+
+
+
+</style>
+<body>
+
+
+<ul>
+  <li><a href="{{url_for('home')}}">← Back</a></li>
+</ul>
+
+
+
+</body>
+
+
+
+
+
+

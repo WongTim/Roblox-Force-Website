@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+<style>
+
+
+body {
+    background-color: black;
+    color: white;
+	font-family: Orbitron;
+}
+
+
+
+
+progress {
+	width:500px;
+	height:100px;
+}
+
+
+
+h1,h2 {
+	text-align:center;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+
+.b {
+	float:right;
+}	
+
+	
+	
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 25px;
+  text-decoration: none;
+}
+
+li a:hover {
+	color: black;
+  background-color: white;
+  transition: all 0.4s ease;
+}
+
+
+
+
+
+
+#shadowBox {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Black w/opacity/see-through */
+}
+
+.rainbow {
+    text-align: center;
+
+}
+.rainbow_text_animated {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 4s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+
+
+input[type=submit] {
+	background-color: green;
+	color:white;
+	text-align: center;
+	font-size: 20px;
+	font-family: Orbitron;
+}	
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="{{url_for('rp2')}}">Ready Player 2</a></li>
+  <li><a href="{{url_for('quiz')}}">Quiz</a></li>
+  <li><a href="{{url_for('progress')}}">{{progress}}</a></li>
+  <li><a href="{{url_for('credits')}}">Credits</a></li>
+  <li class="b"><a href="{{url_for('reset_prompt')}}">Clear Data</a></li>
+  <li class="b"><a href="{{url_for('home')}}">◄ Page 1</a></li>
+
+</ul>
+<br><br><br>
+
+<div id="shadowBox">
+    <h2 class="rainbow_text_animated">{{msg}}</h2>
+	
+
+
+<h2>{{msg1}}</h2>
+
+<br><br>
+
+<center><progress value={{number}} max="100"></progress></center>
+<br><br>
+
+<h1>{{msg3}}</h1>
+<h1 class="rainbow_text_animated">{{msg2}}</h1>
+</div>
+<br><br><br><br>
+
+
+
+
+<br><br><br><br><br><br>
+
+
+</meta>
+
