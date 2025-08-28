@@ -36,7 +36,23 @@ Clicking on an outfit allows you to see the contents of it. Additionally you wil
 <img width="1080" height="720" alt="set_vintage_flame" src="https://github.com/user-attachments/assets/5c88aed5-0797-46c7-80ca-62dae86121cd" />
 As you can see here, timwong's default portrait has now been replaced by his "Vintage Flame" portrait
 
-# Navigation Bar
+
+# Games
+Currrently empty. It used to hold games besides unlocking outfits that you can engage with but they're temporarily disabled for debugging purposes. They will be re-implemented in future.
+
+# Memes
+This page shows some of our best memes we have created from our in-game experiences
+<img width="1918" height="882" alt="memes" src="https://github.com/user-attachments/assets/7e7fd496-2124-4590-b768-7d9cbf19557f" />
+
+# Tutorials
+This page shows tutorials on how to attain items from selected games. Clicking on any of these thumbnails will open a slideshow where you can navigate between steps of said tutorial.
+<img width="1918" height="882" alt="tutorials" src="https://github.com/user-attachments/assets/f223160a-61d1-4201-9e0f-13e1a450d048" />
+<img width="1918" height="916" alt="jetpack" src="https://github.com/user-attachments/assets/787cdb35-7e13-4c79-bc61-472c90eb2843" />
+
+
+
+
+# Saves and Progress
 You would be pleased to know that the web application's server keeps track of the outfits you've unlocked. When you return back to the homepage after unlocking an outfit, there will now be the options of "Save" and "Awards" displayed in the navigation bar. The former option directs you to page where your progress is calculated and stored while the latter displays badge images reflecting what you've achieved.
 <img width="1080" height="720" alt="save_awards" src="https://github.com/user-attachments/assets/8073b408-55bc-4cab-99d9-dda63892eb7d" />
 
@@ -58,7 +74,7 @@ This option allows you to permanently keep your progress. It downloads your curr
 ## Clear
 This option resets your main progress to 0%. However, this only affects your main profile; the 5 slots are unaffected and will continue to store previously saved progress.
 
-# Badges
+# Awards
 Your hard earned progress can also be displayed in the form of badges. For each member whose outfits have been unlocked, you will attain their badge. You will also be awarded a Completion Badge should you reach 100% completion.
 <img width="1080" height="720" alt="badges" src="https://github.com/user-attachments/assets/130d591a-dcd2-4a31-80cd-782512caf9fc" />
 
